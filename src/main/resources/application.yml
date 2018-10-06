@@ -1,8 +1,17 @@
 server:
   port: 8761
 
-
 eureka:
+  instance:
+    hostname: localhost
+    leaseRenewalIntervalInSeconds: 2
+    leaseExpirationDurationInSeconds: 2
+  server:
+    evictionIntervalTimerInMs: 1000
+    response-cache-update-interval-ms: 1000
+    registry-sync-retries: 0
   client:
     fetch-registry: false
     register-with-eureka: false
+    serviceUrl:
+      defaultZone: http://localhost:8761
